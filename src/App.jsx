@@ -447,7 +447,6 @@ const Player = () => {
       <iframe
         key={server}
         src={servers[server]}
-        sandbox="allow-scripts allow-same-origin allow-forms allow-presentation"
         allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
         referrerPolicy="no-referrer"
         style={{flex:1, width:'100%', border:'none'}}
