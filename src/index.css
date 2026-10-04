@@ -417,3 +417,57 @@ body {
   50% { opacity: 0.8; }
   100% { opacity: 0.5; }
 }
+/* ===== Grid pages (Movies / TV Shows / Anime / Browse / Search / Library) ===== */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 24px 16px;
+  align-items: start;
+}
+
+.media-grid .media-card {
+  width: 100%;
+  min-width: 0;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.media-grid .poster-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--card-bg, #18181b);
+}
+
+.media-grid .poster-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.media-grid .card-title {
+  margin: 8px 0 2px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.media-grid .card-meta {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted, #a1a1aa);
+}
+
+@media (max-width: 600px) {
+  .media-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 16px 10px;
+  }
+}
