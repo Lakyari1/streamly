@@ -2,6 +2,10 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { BrowserRouter, Routes, Route, Link, useNavigate, useLocation, useParams, NavLink } from 'react-router-dom';
 import { API, Storage } from './services/api';
 
+import Movies from './pages/Movies';
+import TvShows from './pages/TvShows';
+import Anime from './pages/Anime';
+
 // --- Shared Components ---
 
 function useLazyLoad() {
@@ -672,9 +676,9 @@ export default function App() {
           <Route path="/tv/:idSlug" element={<Details />} />
           <Route path="/play" element={<Player />} />
           <Route path="/person/:idSlug" element={<Person />} />
-          <Route path="/movies" element={<GridPage title="Movies" fetchUrl="/discover/movie?sort_by=popularity.desc" />} />
-          <Route path="/tv-shows" element={<GridPage title="TV Shows" fetchUrl="/discover/tv?sort_by=popularity.desc" />} />
-          <Route path="/anime" element={<GridPage title="Anime" fetchUrl="/discover/tv?with_genres=16&with_original_language=ja" />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/tv-shows" element={<TvShows />} />
+          <Route path="/anime" element={<Anime />} />
           <Route path="/browse/:slug" element={<GridPage title="Browse" fetchUrl="/discover/movie?sort_by=popularity.desc" />} /> 
           <Route path="/search" element={<Search />} />
           <Route path="/library" element={<Library />} />
