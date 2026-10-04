@@ -8,10 +8,14 @@ export default function MediaCard({ item }) {
   const year = releaseDate ? releaseDate.split('-')[0] : '';
   const mediaType = item.media_type || (item.first_air_date ? 'tv' : 'movie');
   const rating = item.vote_average ? item.vote_average.toFixed(1) : null;
+  
+  // Format the URL slug exactly like App.jsx does for consistency
+  const slug = `${item.id}-${title.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}`;
 
   return (
-    <Link to={`/watch/${mediaType}/${item.id}`} className="media-card">
-      <div className="poster-wrapper">
+    <Link to={`/${mediaType}/${slug}`} className="media-card">
+      {/* FIXED: Changed poster-wrapper to poster-wrap to link up with index.css */}
+      <div className="poster-wrap">
         <img
           src={
             item.poster_path
@@ -21,16 +25,16 @@ export default function MediaCard({ item }) {
           alt={title}
           loading="lazy"
           decoding="async"
-          className="media-card-poster"
         />
         {rating && rating > 0 && (
-          <span className="rating-badge">★ {rating}</span>
+          {/* FIXED: Changed rating-badge to rating-ring */}
+          <div className="rating-ring">{rating}</div>
         )}
       </div>
-      <div className="card-info">
-        <h3 className="card-title">{title}</h3>
-        {year && <span className="card-year">{year}</span>}
-      </div>
+      
+      <h3 className="card-title">{title}</h3>
+      {/* FIXED: Formatted exactly like the Home page cards using card-meta */}
+      {year && <p className="card-meta">{year} • {mediaType.toUpperCase()}</p>}
     </Link>
   );
 }
