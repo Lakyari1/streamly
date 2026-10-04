@@ -471,3 +471,69 @@ body {
     gap: 16px 10px;
   }
 }
+/* ===== Mobile friendly ===== */
+@media (hover: none) {
+  .media-card:hover,
+  .logo-card:hover { transform: none; }
+}
+
+@media (max-width: 768px) {
+  /* Bottom nav: fit the screen and clear the iPhone home bar */
+  .bottom-nav {
+    left: 8px;
+    right: 8px;
+    bottom: calc(10px + env(safe-area-inset-bottom));
+    transform: none;
+    justify-content: space-between;
+    gap: 0;
+    padding: 6px;
+  }
+  .bottom-nav a { padding: 8px 10px; font-size: 12px; }
+  .bottom-nav a.brand-s { font-size: 16px; }
+
+  /* Hero */
+  .hero { height: auto; min-height: 70vh; padding: 5% 4% 24px; }
+  .hero-content { max-width: 100%; margin-bottom: 0; }
+  .hero-title { font-size: 28px; }
+  .hero-meta { flex-wrap: wrap; gap: 8px; font-size: 12px; }
+  .hero-overview { font-size: 13px; margin-bottom: 16px; }
+  .hero-buttons { gap: 10px; }
+  .btn { padding: 10px 18px; font-size: 14px; }
+  .hero-thumbs { display: none; }
+
+  /* Section spacing */
+  .section-header { margin: 24px 4% 12px; }
+  .section-title { font-size: 18px; }
+  .media-row { gap: 10px; -webkit-overflow-scrolling: touch; }
+  .rating-ring { width: 26px; height: 26px; font-size: 10px; top: 6px; right: 6px; }
+
+  /* Continue Watching */
+  .cw-card { width: 220px; min-width: 220px; }
+
+  /* Logos */
+  .logo-card { min-width: 100px; height: 60px; padding: 10px; }
+
+  /* Details page */
+  .details-header { padding: 40px 4% 0; gap: 20px; }
+  .details-poster { width: 160px; }
+  .details-header h1 { font-size: 26px !important; }
+  .action-row { flex-wrap: wrap; justify-content: center; gap: 12px; }
+
+  /* Sticky filter bar: shorter, scrolls sideways instead of wrapping */
+  .sticky-top { padding: 8px 12px; margin-bottom: 12px; }
+  .filter-controls {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-bottom: 8px;
+  }
+  .filter-controls::-webkit-scrollbar { display: none; }
+  .filter-controls select,
+  .clear-filters-btn { flex-shrink: 0; font-size: 0.8rem; padding: 6px 10px; }
+  .genre-pills { scrollbar-width: none; }
+  .genre-pills::-webkit-scrollbar { display: none; }
+  .pill { flex-shrink: 0; padding: 5px 12px; font-size: 0.78rem; }
+
+  /* Search */
+  .search-input { padding: 12px 18px; font-size: 16px; margin-bottom: 24px; }
+}

@@ -421,8 +421,8 @@ const Player = () => {
   };
 
   return (
-    <div style={{width:'100vw', height:'100vh', background:'#000', display:'flex', flexDirection:'column'}}>
-      <div style={{padding:'16px 24px', display:'flex', justifyContent:'space-between', alignItems:'center', background:'rgba(0,0,0,0.8)', zIndex:10}}>
+    <div style={{width:'100%', height:'100dvh', background:'#000', display:'flex', flexDirection:'column'}}>
+      <div style={{padding:'12px 16px', display:'flex', justifyContent:'space-between', alignItems:'center', flexWrap:'wrap', gap:'8px', background:'rgba(0,0,0,0.8)', zIndex:10}}>
         <div style={{display:'flex', alignItems:'center', gap:'16px'}}>
           <button onClick={() => nav(-1)} style={{background:'none', border:'none', color:'white', fontSize:'24px', cursor:'pointer'}}>←</button>
           <h2 style={{margin:0, fontSize:'18px'}}>{data ? (data.title || data.name) : 'Loading...'} {type==='tv' ? `• S${season} E${episode}` : ''}</h2>
